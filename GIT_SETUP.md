@@ -12,3 +12,16 @@ ssh-keygen -t ed25519 -C "<your_email@example.com>"
 ```
 ssh-keygen -t rsa -b 4096 -C "<your_email@example.com>"
 ```
+
+### Adding your SSH key to the ssh-agent
+
+1. **Start the ssh-agent in the background.**
+    ```
+    eval "$(ssh-agent -s)"
+    ```
+2. **Add newly created SSH key to agent to listen**
+
+    Provide a path to private file
+    ```
+    ssh-add -K ~/.ssh/id_ed25519
+    ```
